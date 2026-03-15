@@ -4,6 +4,8 @@ published_at: 8/29/12 12:00
 tags: web, javascript
 ---
 
+[Project link](https://excel2latex.com)
+
 ## Backstory
 
 This project grew out of several layers of distraction and procrastination as I finished my computer engineering degree.

@@ -6,7 +6,7 @@ tags: rust, embedded, pedal
 
 In a world of full-featured pedals with endless knobs, Alone is a stripped down, finely-tuned, and shockingly powerful flanger and chorus machine dreamt up by Alec Breslow of Mask Audio Electronics and given a digital brain by yours truly.
 
-![Alone pedal, sitting on a bed of rocks](/assets/alone/alone.webp)
+![Alone pedal, sitting on a bed of rocks](/content/assets/alone/alone.webp)
 
 Alec set out to build a companion to his beloved [Neckbrace phaser pedal](https://maskaudioelectronics.com/collections/pedals/products/neckbrace) utilizing the same platform and "less is more" philosophy.
 You get two knobs: rate, and depth, and a toggle to go between modes; the rest of the parameters are hidden and dialed in by Alec.
@@ -28,8 +28,8 @@ To construct a very long delay time for an audio signal you need a lot of these,
 BBDs are very quirky, lossy devices, and preserving signal integrity across a very wide frequency range is an artform.
 Our application follows a common topology seen in most audio effects, although the secret sauce ends up being how each stage is configured.
 
-![chorus](/assets/alone/chorus.svg "Chorus")
-![flange](/assets/alone/flanger.svg "Flange")
+![chorus](/content/assets/alone/chorus.svg "Chorus")
+![flange](/content/assets/alone/flanger.svg "Flange")
 
 - **Compressor/expander**: lowers/increases dynamic range coming in and out of the BBD to bring the signal level higher above the noise floor
 - **Anti-aliasing filter**: a low-pass filter that bandwidth-limits the signal, removing higher frequencies the BBD cannot reproduce that would be "aliased" into the audible range by
@@ -83,7 +83,7 @@ Built-in ADCs tend to be very noisy with mediocre resolution, but it's more than
 Raw control values are passed through a low-pass filter (I am fond of Andrew Simper's [dynamic smoothing filter](https://cytomic.com/files/dsp/DynamicSmoothing.pdf)!), and we least-significant bit, which has a tendency to flicker at a lower frequency than is reasonable to filter.
 The internal sampling is set to avoid "ghosting" due to the internal capacitor on the ADC.
 
-![alone prototype next to neckbrace flanger](/assets/alone/neckbrace.webp "Twinning")
+![alone prototype next to neckbrace flanger](/content/assets/alone/neckbrace.webp "Twinning")
 
 The mode switch is wired up to GPIO pins, and its second pole is used to switch the feedback path on for the flange mode.
 The footswitch and internal relay get wired directly to the microcontroller, which let me add a fun "hold" mode that kicks in when the switch is held to temporarily minimize or maximize the value of the rate control hands-free.
@@ -108,7 +108,7 @@ The first PCB revision I had given Alec the wrong pinouts and the potentiometers
 Sorry about that, Alec.
 I should know better.
 
-![PCB with cut trace and several bodge wires running everywhere](/assets/alone/bodge.webp "Bodges galore. Thanks, Eric!")
+![PCB with cut trace and several bodge wires running everywhere](/content/assets/alone/bodge.webp "Bodges galore. Thanks, Eric!")
 
 Control ranges were dialed in by sending Alec a ZIP file with a handful of different firmwares he could flash and compare.
 This worked well but it would have been a lot more fun to meet up and knock it all out in an afternoon in person.

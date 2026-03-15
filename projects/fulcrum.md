@@ -49,7 +49,7 @@ It had a fully solid state switching system controlled by an ATTINY85 running so
 I started working with another friend named Chris to develop a brand identity, and he helped me design the cool noodle-esque PCB faceplate.
 I'd shoved the whole thing in a 1590BB enclosure, and completely screwed up the milling dimensions, forcing me to take a metal file to many of the holes to salvage the prototypes.
 
-![flavor packet pedal](/assets/fulcrum/flavor_packet.webp "The 3D effect of the copper layer is even cooler in person")
+![flavor packet pedal](/content/assets/fulcrum/flavor_packet.webp "The 3D effect of the copper layer is even cooler in person")
 
 Overall, it worked.
 The noise floor was pretty bad, in part due to the switching frequency of the DC-DC converter and my own unfamiliarity with switching power supply design (which is a _very_ deep topic).
@@ -70,7 +70,7 @@ Our 9V input could become ±17V (accounting for losses from diode voltage drops)
 I was determined to stay with solid state switching, but the CD4053 I was working with tops out at 24V, and I was forced to use a much more expensive DG-series switch from Vishay that could handle the 30V rail.
 While it worked in theory, in practice it ended up producing a loud popping sound when switching no matter what I did to balance the DC values on either side of the switch due to its large charge injection, an important analog switch property I hadn't been aware of.
 
-![Bezier circuit board as shipped from the fab](/assets/fulcrum/bezier.webp "I was in my curvy traces era")
+![Bezier circuit board as shipped from the fab](/content/assets/fulcrum/bezier.webp "I was in my curvy traces era")
 
 Prior to this revision I'd binge-read [Small Signal Audio Design](http://douglas-self.com/ampins/books/ssad3.htm), and like any disciple of Douglas Self had adopted the NE5532 op amp for my buffers, retaining the TL072 for the gain stage and EQ section.
 The 5532 has slightly more headroom than the TL072, and has superior line-driving capabilities, allowing it to drive the 10kΩ input impedance of line-level studio equipment.
@@ -92,7 +92,7 @@ I completely overhauled the construction and armed with some very gorgeous desig
 Jacks and protection circuitry were now mounted on a separate board and joined with JST headers.
 Purely mechanical and sacrificial protection parts could now be swapped by customers in the event of failure without the need for sending the whole pedal in or soldering.
 
-![Fulcrum revision 1 guts](/assets/fulcrum/fulcrum_rev1_guts.webp "Now we're getting somewhere")
+![Fulcrum revision 1 guts](/content/assets/fulcrum/fulcrum_rev1_guts.webp "Now we're getting somewhere")
 To get it out the door I swallowed my pride and opted for a 5V small signal relay for switching over CMOS switches, as I wasn't having much luck finding the right part.
 The ATTINY85 I was using for "hold for momentary" operation was also frustratingly hard to source, so I created a combination SOIC/DIP footprint that would allow me to use whichever form factor I could source easily at the time.
 
@@ -122,7 +122,7 @@ And with that, we were good to go!
 
 I painstakingly assembled and packed up all 30 pedals in the first batch and opened the online store for business.
 
-![A line of Fulcrum circuit boards lined up, mid-assembly](/assets/fulcrum/assembly.webp "You can tear through a lot of podcasts soldering this many pedals")
+![A line of Fulcrum circuit boards lined up, mid-assembly](/content/assets/fulcrum/assembly.webp "You can tear through a lot of podcasts soldering this many pedals")
 
 The first batch sold out overnight, and the reception was better than anything I could have ever asked for.
 
@@ -136,7 +136,7 @@ It eventually made sense to apply some of this knowledge back to Fulcrum and sol
 Working with analog switches more on other projects had taught me a lot, and I finally had a part number for one that could handle the large voltage rails while keeping charge injection low enough to avoid popping.
 The relay was ripped out and power consumption as well as bill of materials costs improved!
 
-![the insides of revision 2](/assets/fulcrum/fulcrum_rev2_guts.webp "Much more professional this time")
+![the insides of revision 2](/content/assets/fulcrum/fulcrum_rev2_guts.webp "Much more professional this time")
 
 One user reported really odd self-oscillation that would only occur in his practice space.
 I spent a long time trying to recreate this problem, and was eventually able to inconsistently; it seemed to be input-dependent, and using the guitar's tone control could squelch the oscillation entirely.
@@ -159,7 +159,7 @@ Had I picked a more complex effect I would still be iterating, and all of the le
 It's difficult to convince guitarists used to conventional dirty boosts to try something new, but Fulcrum found a niche amongst people looking for a precision tool.
 The feature set is still somewhat unique, and I still hear from people that it's something they keep in their studio toolbox because of its flexibility.
 
-![a black and white fulcrum next to each other](/assets/fulcrum/fulcrum_pair.webp "I eventually made a black version too")
+![a black and white fulcrum next to each other](/content/assets/fulcrum/fulcrum_pair.webp "I eventually made a black version too")
 
 While pedals in this "boring but good" genre will never be massive sellers, I hope to keep building some variation of it for as long as it makes sense.
 
