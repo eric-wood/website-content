@@ -22,7 +22,7 @@ Ideally, my photos can be displayed in the ordering of my choosing from a wide r
 Most photo galleries use a row-based layout, with each having its own column choices to preserve the aspect ratio of each photo.
 It looks really nice!
 
-![screenshot of my photo gallery, showing off the layout](/assets/photo-gallery/gallery.webp "The goal")
+![screenshot of my photo gallery, showing off the layout](/content/assets/photo-gallery/gallery.webp "The goal")
 
 Early attempts to replicate this in pure CSS didn't get very far; while it can express some constraints well, this style of layout requires an iterative algorithm (at least, until the [masonry layout spec](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout) gains wider adoption).
 The requirements bear some resemblance to [rectangle packing](https://en.wikipedia.org/wiki/Rectangle_packing), albeit a much simpler and constrained version of it.
@@ -40,12 +40,12 @@ Before we get too far, let's break down our constraints:
 Let's start with an row and add our first image to it.
 Because there's no other images, we set its width to the remaining width of the container, which happens to be the full width since it's empty.
 
-![row with a single image](/assets/photo-gallery/step1.svg "Hmmmm that doesn't seem like it'll fit")
+![row with a single image](/content/assets/photo-gallery/step1.svg "Hmmmm that doesn't seem like it'll fit")
 
 Even at a fraction of the width, we've exceeded our maximum height.
 Let's add another!
 
-![row with two images](/assets/photo-gallery/step2.svg "Looks like there's still room")
+![row with two images](/content/assets/photo-gallery/step2.svg "Looks like there's still room")
 
 This process is repeated until we find a combination of image aspect ratios that fit within our max-height.
 Because the total container height is only constrained by this maximum, there will always be some combination of aspect ratios that will fill the full width of the row.
