@@ -1,0 +1,80 @@
+---
+location: Golden, CO
+email: eric@ericwood.org
+sections:
+  - title: Skills
+    contents:
+      - title: Languages
+        contents: Javascript, Rust, Ruby, Python, Golang
+      - title: Frameworks
+        contents: Ruby on Rails, React, React Native, Stimulus, Next.js, Embassy
+      - title: Tools
+        contents: Postgresql, SQLite, Git, KiCad, Terraform
+  - title: Work Experience
+    contents:
+      - title: Datadog
+        subtitle: Senior Engineer
+        timeframe: February 2022 - Present
+        contents:
+          - Modernization, operational ownership, and optimization of signup flow
+          - Creation of "teams" feature including data model, APIs, and large pieces of
+            UI
+      - title: Heuristic Industries
+        subtitle: Founder
+        timeframe: June 2020 - Present
+        contents:
+          - Design and manufacture of guitar effects pedals
+          - Custom Shopify storefront built on Remix and their Hydrogen framework
+          - Embedded Rust, analog electronics design, and mixed signal PCB layout
+      - title: Care/Of
+        subtitle: Staff Engineer
+        timeframe: September 2020 - January 2022
+        contents:
+          - Complete revamp of the online experience and migration to Next.js with a focus
+            on performance
+      - title: Zestful
+        subtitle: Senior Engineer
+        timeframe: August 2019 - August 2020
+        contents:
+          - Build out of core Rails-based web application, UI architecture based on WebFlow
+            and Stimulus
+          - Two complete React Native applications and backend APIs to power them
+      - title: Brandfolder
+        subtitle: Senior Engineer
+        timeframe: November 2018 - August 2019
+        contents:
+          - Performance tuning and optimization a large React application
+          - Numerous features, including refactoring to support nested folders and a suite of file conversion tools
+      - title: Squarespace
+        subtitle: Engineer
+        timeframe: November 2017 - November 2018
+        contents:
+          - Design and buildout of a new version of the core template engine
+          - Node.js CLI with file watching capabilities for building and deploying sites
+      - title: Blue Apron
+        subtitle: Engineer
+        timeframe: March 2015 - November 2017
+        contents:
+          - Revamp of registration flow and consumer-facing web experience
+          - Planning and rewrite of large Backbone application to React
+          - Rails-based APIs and data model for surveys and gift card purchases
+      - title: Spiceworks
+        subtitle: UI Application Developer
+        timeframe: January 2013 - February 2015
+        contents:
+          - Development of Spiceworks Community Rails application
+          - Creation of a rich text editor, blogging system, homepage for curated content
+  - title: Education
+    contents:
+      - title: B.S. Computer Engineering
+        subtitle: Texas A&M University
+        timeframe: December 2012
+        contents: []
+  - title: Miscellaneous
+    contents:
+      - title: Presentations
+        contents: Talks for local meet-up groups covering Web MIDI, synthesis, Roomba hacking, and embedded Rust
+      - title: Collegiate Cyber Defense Competition
+        contents: Won 2nd place in nationals (2011) with the Texas A&M team
+      - title: Association for Computing Machinery
+        contents: Texas A&M chapter president from 2010-2012
