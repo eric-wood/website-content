@@ -8,6 +8,8 @@ This project has been a long-running collaboration with Geoff from Winnipeg Elec
 
 Despite having a base building block, this pedal was very much a "starting from scratch" project for me, and is the inception of most of my personal embedded toolkit, which has since found its way into many other projects.
 
+![The echo pedal in all its glory](/content/assets/realistic-analog-echo/rae.webp)
+
 ## Backstory
 
 Years ago Geoff and I were brainstorming delay pedals we wanted to release under our own brands.
@@ -23,6 +25,8 @@ So we started scheming.
 This effect comes from a line of budget consumer electronics Radioshack sold in the 80s and 90s covering a very wide range of products.
 They're cool looking, cheap, and in some cases actually pretty decent for the money.
 Lots of stereo and hifi equipment, and even a synthesizer co-designed with Moog.
+
+![our echo next to the original that inspired it](/content/assets/realistic-analog-echo/og.webp "The original isn't exactly pedalboard-friendly")
 
 Prior to the 80s, reverb as an effect was limited to actual acoustic echo chambers, springs, and plates.
 Technology had just progressed to the point that good algorithmic reverb was possible, albeit expensive.
@@ -90,6 +94,8 @@ There was a balancing act involved in figuring out the smallest number of whole 
 Really early on in this process I realized developing this on-device would be a chore, especially since I wanted to visualize the waveforms.
 I whipped up a simple graphing UI using the [egui](https://github.com/emilk/egui) Rust library that let me run the same LFO code I was writing for the microcontroller.
 Sometimes it's best to tune an audio product with your ears, but in this case issues with the LFO implementations were abundantly clear from visual inspection.
+
+![the oscillator test bench GUI](/content/assets/realistic-analog-echo/lfo.webp "Lots of other LFO shapes from more recent projects too")
 
 The first version of the basic LFOs (triangle, saw, square, and random) were free-running and stateful; every tick of the timer the previous value would get incremented based on whatever logic the LFO required.
 This got us off the ground, but when connected to the actual control we realized every waveform change would reset the LFO abruptly, which sounded awful.
@@ -159,6 +165,8 @@ When an expression pedal is connected (we use a normaled connection on the jack 
 
 While the digital pieces took a bit of time to fully bootstrap, once the building blocks were in place iteration was extremely quick and efficient.
 This is not the case for any analog project I have worked on, and was especially the case on this one.
+
+![the internals of the pedal](/content/assets/realistic-analog-echo/guts.webp "Some of these prototype units have gone through a lot. Spot the bodge!")
 
 #### Noise
 
