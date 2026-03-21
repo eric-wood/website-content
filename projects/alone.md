@@ -1,5 +1,5 @@
 ---
-title: Alone - analog modulation pedal
+title: Alone
 published_at: 9/22/25 12:00
 tags: rust, embedded, pedal
 ---
@@ -21,7 +21,7 @@ Most modulation effects are achieved using small delay lines, and Alone is no di
 Chorus and flanging in particular rely on a cool property of delay lines: modulating the delay time plays back samples already in the buffer at a different rate, changing the pitch.
 
 In most analog effects, delay lines are constructed from [bucket brigade devices](https://en.wikipedia.org/wiki/Bucket-brigade_device) (BBDs).
-Internally, these chips are constructed from a series of stages of [FETs](https://en.wikipedia.org/wiki/Field-effect_transistor) connected to small capacitors; every clock pulse, a sample is taken from the input and moved through each stage, gated by the FET and stored in the accompanying capacitor.
+Internally, these chips consist of a series of stages of [FETs](https://en.wikipedia.org/wiki/Field-effect_transistor) connected to small capacitors; every clock pulse, a sample is taken from the input and moved through each stage, gated by the FET and stored in the accompanying capacitor.
 For digitally-brained folks, think of it like an analog shift register.
 To construct a very long delay time for an audio signal you need a lot of these, and for our application we're using the MN3207, which tops out at a theoretical 51.2ms (although it can go much longer).
 
@@ -31,12 +31,25 @@ Our application follows a common topology seen in most audio effects, although t
 ![chorus](/content/assets/alone/chorus.svg "Chorus")
 ![flange](/content/assets/alone/flanger.svg "Flange")
 
-- **Compressor/expander**: lowers/increases dynamic range coming in and out of the BBD to bring the signal level higher above the noise floor
+- **Compressor/expander**: compresses then expands the signal to lower/increase dynamic range before and after the BBD, bringing it higher above the noise floor
 - **Anti-aliasing filter**: a low-pass filter that bandwidth-limits the signal, removing higher frequencies the BBD cannot reproduce that would be "aliased" into the audible range by
 - **Reconstruction filter**: converts the discrete samples output by the BBD into a continuous analog waveform, again bandwidth limiting to remove any aliasing artifacts and clock noise from the BBD itself
 
-Note that the flange and chorus diagrams are almost identical, with the flange adding a feedback path from the delay line output back into itself.
-This and the delay time are the biggest differences between the two effects.
+Note that the flange and chorus diagrams are almost identical, with the flange adding a feedback path from the delay line output back into itself; this and the delay time are the biggest differences between the two effects.
+
+#### Why
+
+This is usually the point in the explanation where seasoned engineers stop me and ask me why us pedal people play with these things.
+Delay lines are trivial in digital signal processing, why go through all of this effort to work with a device that clearly hates you?
+
+The answer is simple: because it's cool. And sounds cool too.
+
+All of the supporting circuitry required to get a usable signal out of a BBD defines its sound as much as the BBD itself.
+Companding isn't perfect and impacts the dynamics (and therefore "feel") of the effect.
+The filters on either end happen to coincide with frequencies that are very flattering on guitar and in many cases help it sit better in a mix.
+
+There's no shortage of really good plugins and pedals that emulate these things, but if you're taking the trouble to own a dedicated hardware device for the effect you might as well use the real thing.
+And harnessing exotic and weird tech of the past for musical purposes is undeniably punk as hell.
 
 ### Digital control
 

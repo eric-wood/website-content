@@ -11,9 +11,7 @@ tags: rust, embedded
 ## Backstory
 
 Knowing I love to tinker, my sister got me this very cool [Adafruit macropad](https://www.adafruit.com/product/5128) for Christmas.
-
-At first, I was a bit nervous; I have so many dev boards and little kits collecting dust in my closet as it is, and hacking aside I'm not even sure what I'd use a macropad for.
-Digging into the documentation and physical makeup of it piqued my interest, though, as I'd always wanted an excuse to play with the RP2040.
+I was excited but a little ambivalent; development boards with cool peripherals are irresistible, but I worried it suffer the same fate as many of other projects gathering dust in my closet.
 It couldn't hurt to make the LEDs blink at least, right?
 
 Reveling in once again having time to myself in the wake of the holidays, I started hacking away.

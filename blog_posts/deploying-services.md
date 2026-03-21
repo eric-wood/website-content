@@ -4,13 +4,27 @@ published_at: 3/15/26 8:37
 tags: linux, web
 ---
 
-When I set out to self-host my website I needed to figure out a workflow for deploying changes I make to both the website itself as well as its content.
-I've worked with numerous solutions in the space throughout my career, but they're all overkill for something this small and bounded.
-Even tools marketed to people self-hosting web applications were a bit much and added complexity I wasn't keen on.
+Early on in my journey to self-host this website I had to figure out how to deploy it.
+The desired workflow was similar to what I'd use with Heroku, where deployment is done by a `git push` to the remote.
 
-Surely there's a way to make this work using off the shelf parts that come with the operating system, right?
+Most tooling targeted at this use-case is overkill for [this application](/projects/website), which runs as a single executable and only consumes static data from files and a SQLite database.
+There's lots of container-centric options that make more sense for servers with many dependencies.
+Plenty of CI/CD solutions with reverse proxies and no-downtime deploys.
+The amount of YAML you can throw at this problem is unprecedented.
 
-After a bit of experimentation I've landed on a very simple and arguably elegant solution that makes updates as simple as a `git push`.
+Maybe I'll need some of that stuff one day.
+Until then, I wanted to make use of the tooling already available in Linux.
+
+What I've settled on here is a minimum viable solution for running fairly self-contained services in a Linux environment.
+It's nothing groundbreaking, but requires some tinkering that may be non-obvious unless you're already a hardened Linux veteran.
+
+## Overview
+
+At a high level, we're going to:
+
+- Create a bare git repo with a hook to check out and build the app when pushed to
+- Create a systemd service for our app
+- Configure some permissions stuff
 
 For the sake of simplicity, some of the file paths, users, and permissions will be left as an exercise to the reader.
 These aren't difficult to figure out and will probably be something you have an opinion about anyways!
