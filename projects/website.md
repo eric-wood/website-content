@@ -4,63 +4,43 @@ published_at: 3/6/26 12:00
 tags: web, rust
 ---
 
-## Eric, online
+Personal websites have been a part of my life since I wrote my first HTML tag in middle school.
+Early versions had all of the trappings of classic Geocities sites, complete with marquees and vivid colors.
+Publishing something of my own on the internet was an intoxicating experience and quickly became an obsession.
 
-### The early days
-
-When I was first starting high school I asked my dad how websites worked; he showed me I could right click and "view source" on any webpage, sending me down a rabbit hole I have yet to emerge from.
-Since then, I've had some form of personal website.
-They've taken many forms; early ones had all of the trappings of a classic Geocities page, usually hosted on whatever sketchy free hosting service I could find with a web editor (crucial for being able to tinker with it from locked down school computers).
-Each iteration was more complex than the last as I honed my CSS, JS, and overall design skills.
-Hours were spent experimenting, refining, and cursing the browser wars.
-
-In college I bought this domain name (all of the other good TLDs with my name were taken) and continued the tradition.
-As my career path guided me more and more towards working on the web, the iterations of this site have become more of a resume and any aspirations of hosting dynamic content were abandoned in the face of reality: I was busy!
+The sites matured as my tastes and skills did, incorporating exciting new technologies like CSS and `XMLHttpRequest`.
+My college internships had me working with web technologies more seriously, and my sites transitioned into portfolios.
+As I entered the working world iterations were less frequent, with most updates happening when I'm looking for work or want to promote something new.
 
 ### Another iteration
 
-Fast forward to September 2025: I've just become a father!
-My paternity leave was full of responsibility and purpose, but between feeds and naps and making sure my wife was comfortable I had a surprising amount of down-time spent nearby, ready to jump into action at a moment's notice.
-I really needed a project; something already in my wheelhouse I could hack away with minimal mental context switching overhead.
-Something I could have a little bit of control over as I submitted myself to the process of raising a newborn.
-Something that was fun and comforting.
+September 2025 I became a father.
+
+Being at home with a newborn as the non-birthing parent is an exciting, draining, and surprisingly quiet experience.
+My contributions were fairly limited biologically, and while I was bearing great responsibility, there was a surprising amount of downtime spent in a hazy purgatory-like state.
+
+Housebound (and a little rudderless, if I'm being honest), I found myself looking for a project.
+I needed something rewarding, familiar, and low-stakes.
+Something I could hack away on in the throes of sleep deprivation and chip away at between fatherly duties.
 
 Time for a new website.
 
 ### Guiding principles
 
-Taking everything I've learned from past websites, both as a producer and consumer, I settled on a few ground rules for this iteration:
+I wanted to do things a little differently this time.
 
-#### Simple
+My past sites had been a snapshot of me at a specific point in time; I'd given up on any notion of keeping an active blog or making frequent updates.
+The most rewarding personal websites to stumble onto were ones that felt rich and alive, with an archive of interesting things to read and content to thumb through.
+This version needed to capture some of that magic in a way that met me where I was—content should stream in from applications and tools I was already using, so updates would happen organically.
 
-This is a passion project meant to occupy my rapidly vanishing free time.
-Maintenance should be relatively effortless after the initial setup, and while I aim to design a resilient system, the goal is not five 9's of uptime.
-
-#### Self-hosted
-
-I've been burnt more times than I can count by hosting providers.
-Platforms come and go, and sometimes they claw back previously cheap or free tiers as the economics change.
-
-This website is meant to be a reflection of me, and I want to have full self-determination for how it's built down to the hosting layer.
-The resources required to keep it online are minimal, and a one-time cost of a cheap/free server will allow me to operate it in perpetuity using commodity hardware.
-
-#### Alive
-
-Unlike my past websites, I want this one to feel like a living, breathing entity that rewards repeat visits.
-Even if visitors never return, the entire experience feels different when there's recent content.
-
-Publishing content requires a time investment, which is increasingly tough to with a kid in the picture.
-If I rely solely on publishing blog posts, the whole endeavour is a non-starter and doomed to languish like every other website I've built.
-Success hinges on lowering the activation energy requires to publish, and having content streams beyond low-frequency high-effort ones like blog posts.
-
-The site should tie together all things Eric from the source, which means building automations into the apps and tools I'm already using, and when necessary building them to make the updating process easier.
-There should be a clear value add for having something published to the site, too, e.g. if I share photos being able to give people access to the full-resolution images (a rare feature on most photography sharing websites).
+In an effort to wrestle back some control from the world of SaaS products I was going to do things the "hard way" and self-host it all.
+Having a sandbox to play around in without worry of subscription pricing and changing terms felt right for something that was meant to be personal, and I'd be free to grow things however I wanted in the future.
 
 ## How it all works
 
 So here's what I've built.
 I'm really happy with the results, and excited to keep adding more features and tinkering with the ones I've already built.
-As any reflection of me should be, it's an imperfect system that's constantly improving.
+Just like me, it's an imperfect system that's constantly improving.
 
 ### Hardware
 
@@ -68,12 +48,10 @@ Everything is powered by a single Lenovo ThinkCentre packing an i5 processor and
 I got it for next to nothing on Ebay from a seller that configures the hardware to your specs, but odds are you can find these for free from office or school liquidations locally.
 I bought it mostly because the form factor is nice and tiny and it's cute.
 
-TODO: pic of server
+![the server, in all its glory](/content/assets/website/server.webp "See? It is cute.")
 
-These are popular Linux targets it turns out, so everything works out of the box with minimal fiddling.
-Mine is special in that it's the only Linux machine I have ever set up in my life where Wifi worked out of the box but wired ethernet would no work no matter what I tried.
-After wasting a lot of time on debugging it I've chalked it up to a freak accident on my specific motherboard and opted to grab a USB to ethernet dongle instead, which looks stupid but works great.
-Waste not, want not.
+This is the first computer I've installed Linux on where the ethernet port doesn't work out of the box.
+Many hours of debugging and I came to the conclusion there was a hardware issue with the motherboard itself, so it now sports a USB to ethernet dongle.
 
 ### Networking
 
@@ -84,8 +62,8 @@ To sidestep all of this, I opted to use [Cloudflare's tunnel product](https://de
 It's free, somehow, and runs a daemon that tunnels (valid) requests from the open internet to destinations on my server.
 They manage the DNS for me, and setting up new subdomains and routes is effortless while keeping me from having to mess with my own reverse proxy to route everything.
 
-Having a CDN in front of my site helps me sleep peacefully at night knowing a good chunk of malicious actors are being filtered out and any sudden spikes in popularity are handled without taxing my limited hardware.
-Everything is set to cache aggressively, and in the event of extended downtime Cloudflare will serve my site from historic backups via [archive.org](https://archive.org).
+Having a CDN in front of my site throttles any load from sudden bursts in popularity, and relatively aggressive caching headers cut down on the load significantly.
+During power outages or other downtime events the site will continue to stay up, albeit in a less capable fully static form.
 
 I've also set up [Tailscale](https://tailscale.com) so I can (safely) access it from anywhere without having to expose SSH to the outside world.
 
@@ -93,11 +71,16 @@ I've also set up [Tailscale](https://tailscale.com) so I can (safely) access it 
 
 The site itself is built entirely in Rust with a small web "framework" I've pieced together on top of [axum](https://github.com/tokio-rs/axum).
 It loosely follows an MVC-style architecture inspired by Rails, but is very explicit and Rust-y at its core.
-Previously to starting this project I'd written a lot of Rust, but purely in `no_std` embedded environments without a heap.
-As the breadth of the site expands, I'm excited to do more with the underlying framework and remove some of the boilerplate necessary right now (which will mean some macros and other fun stuff!).
+Despite having written a decent amount of embedded Rust, this was my first real foray into targeting a "real" computer with it, and having access to a heap was really fun!
+
+As the scope of the project balloons with more features I hope to revisit all of this and apply more Rust knowledge.
+There's more boilerplate required to add new routes and views than I'd like, and I want to see what I can accomplish with macros and dynamic dispatch.
 
 The pages themselves are as lightweight as possible, with the CSS and JS required to render any given view inlined into the page itself and generous caching headers applied to almost every response.
 Wherever possible, I lean on the web platform itself, and little snippets of JS are purely additive to the experience whenever possible.
+
+The app itself runs as a systemd service I can update through git pushes.
+[This blog post](/blog/deploying-services) has more details on how that aspect of it works.
 
 #### Photos
 
@@ -108,10 +91,32 @@ I wanted control over how my artwork was presented to the world, and a novel sys
 I manage all of my photos in the Apple Photos app, and the photos destined for the website all live in an album.
 Periodically, a [tool I built](https://tangled.org/ericwood.org/photo-album-extractor) on top of the amazing [osxphotos](https://github.com/RhetTbull/osxphotos) library runs and extracts all of the photos from that album into a directory on my computer. Select metadata (including tags automatically applied by Apple's machine learning algorithms) for the photos gets pulled into a SQLite database and thumbnails are created. The resulting directory is then `rsync`'d to the server and the app is restarted.
 
-The site works off of the SQLite database when showing the gallery, and is able to efficiently query for unions of different tags, handle pagination, and anything else I dream up in the future. Rendering a gallery of images with different aspect ratios wasn't possible in pure CSS (well, until the masonry stuff is more widely supported), and required building an algorithmic layout to pack each row, which I will write an entire blog post on in the near future.
+The site works off of the SQLite database when showing the gallery, and is able to efficiently query for unions of different tags, handle pagination, and anything else I dream up in the future. Rendering a gallery of images with different aspect ratios wasn't possible in pure CSS (well, until the masonry stuff is more widely supported), and required [building an algorithmic layout](/blog/photo-gallery) to pack each row.
 
 This has worked beautifully in practice, as I can go about managing my photo library as I would anyways and select a handful of photos from each roll to share with the world without extra steps.
 It's easy for me to link people to individual photos without re-uploading them everywhere, and they get to see the full, unadulterated image.
 The tag system has been really fun, and I regularly find myself looking back at old photos on the site using it.
 
 #### Blog/projects
+
+Everything post-shaped on this website is powered by markdown files in a [separate repository](https://github.com/eric-wood/website-content).
+On boot, the application runs through the different post types and extracts metadata from the frontmatter embedded in each file to build an in-memory data store used for rendering the index pages.
+
+The contents of the pages themselves are rendered using the wonderful [Comrak](https://comrak.ee) crate, which I've tacked on some customizations to for extracting the table of contents shown on each page.
+Because these pages are all extremely static and bounded, the application pre-renders them all as raw HTML files when it boots up in production mode.
+It's maybe a bit of an over-optimization given the whole site is fronted by a CDN with aggressive caching, but it's a nice optimization that lets static content get served directly from disk.
+
+#### Themes
+
+I added these when I needed a break from writing all of the initial content for the site.
+Themes are constructed from a foreground and background color set as [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties); all interstitial colors are created with opacity using [`color-mix`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/color-mix).
+The currently selected theme gets persisted to local storage.
+
+#### Music
+
+Just like with the photos section, I want to share the music I'm creating and listening to directly from the apps I'm consuming it from.
+
+I just don't know what that looks like yet.
+Extracting a playlist from Apple Music to share on here doesn't allow me to write about why I love a song, and I need to spend more time thinking about how I want it all to work.
+
+For now, the page is a placeholder, but it's something I plan on returning to once inspiration strikes.

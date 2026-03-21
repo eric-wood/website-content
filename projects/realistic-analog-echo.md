@@ -76,6 +76,8 @@ Running at 48MHz we'd have a very large cycle budget to work with, and the timer
 The dev board was simple but took a few iterations to get right; I miscalculated how difficult it was to drive the absurd input capacitance of the MN3205, and it wasn't until I added a gate driver that things functioned properly.
 For good measure I threw on some programming headers, potentiometers for the digital controls, and an RGB LED because why not.
 
+![development board, revision 4 and dusty as heck](/content/assets/realistic-analog-echo/dev.webp "Yes it took 4 revisions to nail down, and this specific one has been through a LOT")
+
 Most of the early development was done this way, with the dev board jumpered to the analog one.
 Being able to hear the results of the framework I was building for this project was crucial and helped speed things along.
 
