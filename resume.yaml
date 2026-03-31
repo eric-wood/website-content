@@ -5,7 +5,7 @@ sections:
   - title: Skills
     contents:
       - title: Languages
-        contents: Javascript, Rust, Ruby, Python, Golang
+        contents: Javascript, Typescript, Rust, Ruby, Python, Golang
       - title: Frameworks
         contents: Ruby on Rails, React, React Native, Stimulus, Next.js, Embassy
       - title: Tools
@@ -24,8 +24,8 @@ sections:
         timeframe: June 2020 - Present
         contents:
           - Design and manufacture of guitar effects pedals
-          - Custom Shopify storefront built on Remix and their Hydrogen framework
           - Embedded Rust, analog electronics design, and mixed signal PCB layout
+          - Fully custom Shopify storefront built on Remix and Hydrogen
       - title: Care/Of
         subtitle: Staff Engineer
         timeframe: September 2020 - January 2022
